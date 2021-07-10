@@ -3,7 +3,7 @@
     "path": "D:/GitHub/IACE 2021/conference.Rmd",
     "project_path": "conference.Rmd",
     "type": "r_markdown",
-    "hash": "0",
+    "hash": "3633332268",
     "contents": "",
     "dirty": false,
     "created": 1625842532677.0,
@@ -12,19 +12,19 @@
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "315,27",
-        "scrollLine": "0",
+        "cursorPosition": "364,0",
+        "scrollLine": "347",
         "rmdVisualMode": "false",
         "rmdVisualWrapConfigured": "true",
         "docOutlineVisible": "1",
         "rmdVisualModeLocation": "9890:6785.33349609375"
     },
     "folds": "",
-    "lastKnownWriteTime": 1625925077,
+    "lastKnownWriteTime": 1625929275,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1625925077289,
+    "last_content_update": 1625929275523,
     "read_only": false,
     "read_only_alternatives": []
 }
