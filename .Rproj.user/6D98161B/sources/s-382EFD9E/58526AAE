@@ -3,7 +3,7 @@
     "path": "D:/GitHub/IACE 2021/speech.Rmd",
     "project_path": "speech.Rmd",
     "type": "r_markdown",
-    "hash": "0",
+    "hash": "627670053",
     "contents": "",
     "dirty": false,
     "created": 1625901571826.0,
@@ -12,19 +12,19 @@
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "153,5",
-        "scrollLine": "122",
+        "cursorPosition": "60,0",
+        "scrollLine": "55",
         "rmdVisualMode": "false",
         "rmdVisualWrapConfigured": "true",
         "docOutlineVisible": "1",
         "rmdVisualModeLocation": "2542:1408.6666259765625"
     },
     "folds": "",
-    "lastKnownWriteTime": 1625925872,
+    "lastKnownWriteTime": 1625929963,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1625925872953,
+    "last_content_update": 1625929963269,
     "read_only": false,
     "read_only_alternatives": []
 }

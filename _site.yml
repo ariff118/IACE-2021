@@ -9,11 +9,11 @@ navbar:
       href: schedule.html
     - text: "Messages"
       href: messages.html
-    - text: "Speech Contest"
+    - text: "English Impromptu Speech Contest"
       href: speech.html
-    - text: "Pitching Competition"
+    - text: "Idea Pitching Competition"
       href: pitching.html
-    - text: "Conference"
+    - text: "(Online) International Conference"
       href: conference.html
 output:
   html_document:
