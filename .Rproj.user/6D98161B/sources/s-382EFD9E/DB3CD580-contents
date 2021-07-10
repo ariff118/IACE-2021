@@ -1,0 +1,132 @@
+---
+title: ""
+output:
+  html_document: 
+    includes:
+      in_header: assets/header.html
+      after_body: footer.html
+#toc: false
+#toc_float: false
+---
+  
+<link rel="stylesheet" href="styles.css" type="text/css">
+
+<!-- ```{r, echo=FALSE, warning=FALSE, layout='l-screen'} -->
+<!-- knitr::include_graphics("images/blue-logo.png") -->
+<!-- ```   -->
+
+<center><h1>
+IACE 2021 Tetative Programme
+</h1></center>  
+
+Use the **[JOIN]** button below to register.
+
+## {.tabset}  
+
+### Day 1 - 19 August, 2021 (Bangkok: GMT+07:00)  
+
+<h2>
+**4th International Academic & Cultural Exchange For Rajabhat and ASEAN Universities 2021 (Online) (IACE 2021)**
+</h2>
+
+> 08:00 a.m. - 09:00 a.m.  
+>  
+> ### Registration on ZOOM 
+> Familiarise yourself with the conference platform and check that your equipment is working by accessing the 'registration' session.  
+>  
+> [[JOIN]]()  
+
+---  
+
+> 09:00 a.m. - 09:30 a.m.  
+>  
+> ### Opening Ceremony and Welcome Speeches by:\
+> 1. President of TRU, Thailand\
+> 2. Rector of UiTM, Malaysia\
+> 3. Rector of UST, Indonesia\
+> 4. Rector of HUTECH, Vietnam\
+> 5. Rector of UNIPA, Indonesia\
+
+---
+
+> 09:30 a.m. - 12:30 p.m.  
+>  
+> Online International English Impromptu Speech Contest for Rajabhat & ASEAN Universities\
+>  
+> Online International Idea Pitching Competition\
+
+---
+
+> 12:30 p.m. - 1:00 p.m.  
+>  
+> Lunch\
+
+---
+
+> 1:00 p.m. - 4:30 p.m.  
+>  
+> Online International English Impromptu Speech Contest for Rajabhat & ASEAN Universities\
+>  
+> Online International Idea Pitching Competition\
+
+---
+
+> 4:30 p.m. - 5:00 p.m.  
+>  
+> Awards & Certification for the Winners & Student Participants\
+
+---
+
+### Day 2 - 20 August, 2021 (Bangkok: GMT+07:00)  
+
+<h2>
+**Online International Conference on “Teaching and Learning in New Normality: A Key to Empower Teacher Towards Sustainable Education”**
+</h2>
+
+> 08:30 a.m. - 09:00 a.m.  
+>  
+> ### Registration on ZOOM 
+> Familiarise yourself with the conference platform and check that your equipment is working by accessing the 'registration' session.  
+>  
+> [[JOIN]]()  
+
+---  
+
+> 09:00 a.m. - 09:30 a.m.  
+>  
+> ### Opening Ceremony and Welcome Speeches by:\
+> 1. President of TRU, Thailand\
+> 2. Rector of UiTM, Malaysia\
+> 3. Rector of UST, Indonesia\
+> 4. Rector of HUTECH, Vietnam\
+> 5. Rector of UNIPA, Indonesia\
+
+---
+
+> 9:30 a.m. - 12:00 p.m.  
+>  
+> Three Keynote Speakers (The names of keynote speakers and topics will be announced later in an abstract booklet on 16th August 2021)\
+
+---
+
+> 12:00 p.m. - 1:00 p.m.  
+>  
+> Lunch\
+
+---
+
+<center>
+*In the afternoon, the presentations will be divided into four session rooms*\
+*according to a specific field of study as the following:*
+</center>
+
+---
+
+> 1:00 p.m. - 4:30 p.m.  
+>  
+> Room 1: Humanities and Social Sciences\
+> Room 2: Science and Technology\
+> Room 3: Education\
+> Room 4: Management\
+
+---

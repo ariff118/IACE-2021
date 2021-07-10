@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>pitching.knit</title>
+
+<script src="site_libs/header-attrs-2.8/header-attrs.js"></script>
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/yeti.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+      <title></title>
+  </head>
+  <body>
+    <div class="article-header">
+      <center><img src="images/blue-logo.png" class="article-banner" alt=""></center>
+    </div>
+    </a>
+    <br></br>
+    <dev>
+      <center>
+        <p>Current Date and Time in Sungai Petani</p>
+        <p><span id='date-time'></span>.</p>
+
+      	<script>
+      		function startTime() {
+        		var dt = new Date();
+            	var h = dt.getHours();
+  				    var m = dt.getMinutes();
+  				    var s = dt.getSeconds();
+  				m = checkTime(m);
+  				s = checkTime(s);
+        		document.getElementById('date-time').innerHTML = dt;
+            	var t = setTimeout(startTime, 1000);
+			}
+       		function checkTime(i) {
+  				if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+  				return i;
+			}
+	  	</script>
+    	<body onload="startTime()">
+	  		<div id="txt"></div>
+    	</body>
+      </center>
+    </dev>
+  </body>
+</html>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+<link rel="stylesheet" href="styles.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">IACE 2021</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="schedule.html">Schedule</a>
+</li>
+<li>
+  <a href="messages.html">Messages</a>
+</li>
+<li>
+  <a href="speech.html">Speech Contest</a>
+</li>
+<li>
+  <a href="pitching.html">Pitching Competition</a>
+</li>
+<li>
+  <a href="conference.html">Conference</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+
+</div>
+
+
+<p><link rel="stylesheet" href="styles.css" type="text/css"></p>
+<!-- ```{r, echo=FALSE, warning=FALSE, layout='l-screen'} -->
+<!-- knitr::include_graphics("images/blue-logo.png") -->
+<!-- ```   -->
+<style>
+body {
+text-align: justify}
+</style>
+<center>
+<p><img src="images/all-logo.png" /><br />
+<br> <br> <br></p>
+<h3>
+<strong>ONLINE INTERNATIONAL IDEA PITCHING COMPETITION</strong><br />
+<br />
+<strong>19<span class="math inline">\(^{th}\)</span> August 2021</strong>
+</h3>
+</center>
+<hr />
+<p>The International Idea Pitching Competition for students aims to recognize innovative thinking. The main objective of the idea pitching contest is to motivate the student to stimulate new ideas on <strong>“OPPORTUNITIES TO BUSINESS DURING THE COVID-19 PANDEMIC”</strong>. It is designed to make an advantageous connection with the creativity and expertise within the community for effective solutions and future development.<br />
+<br />
+</p>
+<hr />
+<p><strong>I. QUALIFICATIONS / RULES</strong><br />
+</p>
+<p>This international idea pitching competition is for recent undergraduate students from Rajabhat and ASEAN universities. Each university can send no more than two teams to the competition.</p>
+<p>Each team can have 3 to 5 students. Single entries are permitted, but team registration is encouraged. A 5-minute oral presentation is required, and questions will be asked by judges via ZOOM application.<br />
+<br />
+</p>
+<hr />
+<p><strong>II. SUBMISSION</strong><br />
+</p>
+<ol style="list-style-type: decimal">
+<li>Completed application form via this link: <a href="https://forms.gle/KW4s7nZh67qcsHJM6">https://forms.gle/KW4s7nZh67qcsHJM6</a> or scan QR Code<br />
+</li>
+</ol>
+<center>
+<img src="images/QR.bmp" />
+</center>
+<ol start="2" style="list-style-type: decimal">
+<li>A 3-5 minute video with screenshots describing/demonstrating the project is required.<br />
+<br />
+</li>
+</ol>
+<hr />
+<p><strong>III. TIMELINE OF COMPETITION</strong><br />
+</p>
+<p>Online registration and submission is from <u><em>1<span class="math inline">\(^{st}\)</span> July to 10<span class="math inline">\(^{th}\)</span> August 2021</em></u>. The submission period closes on <u><em>10th August 2021</em></u> at 11:59 PM (Bangkok: GMT+07:00)<br />
+<br />
+The competitors will be asked to share the link to the video presentation and related information (if any) within <u><em>13<span class="math inline">\(^{th}\)</span> August 2021</em></u> at 11:59 PM (Bangkok: GMT+07:00) via e-mail: <a href="sasilak.r@hotmail.com">sasilak.r@hotmail.com</a><br />
+<br />
+Event: The competition starts on <u><em>19<span class="math inline">\(^{th}\)</span> August 2021</em></u> at 9.00 AM (Bangkok: GMT+07:00)<br />
+<br />
+Award Ceremony on <u><em>19<span class="math inline">\(^{th}\)</span> August 2021</em></u> at 4.30 PM (Bangkok: GMT+07:00)<br />
+<br />
+</p>
+<hr />
+<p><strong>IV. PROCEDURE OF COMPETITION</strong><br />
+</p>
+<p><strong>Prior to Competition Date</strong><br />
+</p>
+<p>The order of participating teams will be determined by drawing lots, and the details including competition schedule and zoom link will be sent to competitors via e-mail and announced on IACE 2021 Facebook Fanpage.<br />
+<br />
+<br />
+<strong>Competition Date</strong><br />
+</p>
+<ul>
+<li><p>The name of each team to be used during the competition on ZOOM will be set as follows:<br />
+</p>
+<center>
+<p><strong><em>Team Name (University Abbreviation in parenthesis) Competitor’s Name</em></strong></p>
+</center>
+<p><br />
+</p>
+<center>
+<p>For example: LovelyPanda (TRU) Jackie</p>
+</center>
+<p><br />
+</p></li>
+<li><p>The competitors are required to be present in the ZOOM waiting room for at least 30 minutes before their competition time as scheduled. Any teams that fail to be present after 10 minutes of their competition time will be disqualified.<br />
+</p></li>
+<li><p>Each team is required to present their video and then deliver their presentation for 3-5 minutes before being asked questions in terms of what they have presented by the judges.<br />
+</p></li>
+<li><p>The competitors may leave the competition after answering the judges’ questions.<br />
+<br />
+</p></li>
+</ul>
+<hr />
+<p><strong>V. CRITERIA</strong><br />
+</p>
+<ol style="list-style-type: decimal">
+<li>Creativity – The project is original, worthwhile and shows creative thinking, innovative and imaginative design, interesting and divergent interpretation and implementation. (20 points)<br />
+</li>
+<li>Quality of Solution – The project is well-thought out and is a good solution to the problem. The solution supports the theme assisting humanity to solve problems in the required areas. (20 points)<br />
+</li>
+<li>Video presentation – The presentation is attractive and well-organized with clear and logical information, including content, graphics, and figures. (20 points)<br />
+</li>
+<li>Project Impacts / Contribution – The project has favorable impacts on Opportunities to Business in Covid 19 Pandemic. (20 points)<br />
+</li>
+<li>Teamwork - There is evidence that team members have internalized knowledge and understanding of their project. The team members are able to demonstrate that all members play an important role in the development. The team displays positive and enthusiastic energy to share their project with others. (20 points)<br />
+<br />
+</li>
+</ol>
+<hr />
+<p><strong>VI. AWARDS</strong><br />
+</p>
+<ol style="list-style-type: decimal">
+<li>The winner and his/her speech coach will be awarded 9,900 Baht (approx. 330USD) with a certificate.<br />
+</li>
+<li>The first runner-up and his/her speech coach will be awarded 8,000 Baht (approx. 265 USD) with a certificate.<br />
+</li>
+<li>The second runner-up and his/her speech coach will be awarded 7,000 Baht (approx. 235 USD) with a certificate.<br />
+</li>
+<li>The third runner-up and his/her speech coach will be awarded 6,000 Baht (approx. 200 USD) with a certificate.<br />
+</li>
+<li>The fourth runner-up and his/her speech coach will be awarded 5,000 Baht (approx. 165 USD) with a certificate.<br />
+<br />
+</li>
+</ol>
+<p><span class="math inline">\(^*\)</span> <em>Awards will be transferred to the winners’ bank accounts after they have sent their scanned passports with signatures to the organizers.</em><br />
+<span class="math inline">\(^{**}\)</span> <em>All contestants will receive a participation certificate.</em></p>
+
+<style>
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #3b3834;
+  color: white;
+  text-align: center;
+  font-family: Sans-Serif;
+  font-size: 12px;
+}
+</style>
+
+<div class="footer">
+<center>
+<p>Copyright &copy; 2021 IACE. All rights reserved.</p>
+</center>
+</div>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

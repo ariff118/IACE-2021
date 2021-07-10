@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>speech.knit</title>
+
+<script src="site_libs/header-attrs-2.8/header-attrs.js"></script>
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/yeti.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+      <title></title>
+  </head>
+  <body>
+    <div class="article-header">
+      <center><img src="images/blue-logo.png" class="article-banner" alt=""></center>
+    </div>
+    </a>
+    <br></br>
+    <dev>
+      <center>
+        <p>Current Date and Time in Sungai Petani</p>
+        <p><span id='date-time'></span>.</p>
+
+      	<script>
+      		function startTime() {
+        		var dt = new Date();
+            	var h = dt.getHours();
+  				    var m = dt.getMinutes();
+  				    var s = dt.getSeconds();
+  				m = checkTime(m);
+  				s = checkTime(s);
+        		document.getElementById('date-time').innerHTML = dt;
+            	var t = setTimeout(startTime, 1000);
+			}
+       		function checkTime(i) {
+  				if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+  				return i;
+			}
+	  	</script>
+    	<body onload="startTime()">
+	  		<div id="txt"></div>
+    	</body>
+      </center>
+    </dev>
+  </body>
+</html>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+<link rel="stylesheet" href="styles.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">IACE 2021</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="schedule.html">Schedule</a>
+</li>
+<li>
+  <a href="messages.html">Messages</a>
+</li>
+<li>
+  <a href="speech.html">Speech Contest</a>
+</li>
+<li>
+  <a href="pitching.html">Pitching Competition</a>
+</li>
+<li>
+  <a href="conference.html">Conference</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+
+</div>
+
+
+<p><link rel="stylesheet" href="styles.css" type="text/css"></p>
+<!-- ```{r, echo=FALSE, warning=FALSE, layout='l-screen'} -->
+<!-- knitr::include_graphics("images/blue-logo.png") -->
+<!-- ```   -->
+<style>
+body {
+text-align: justify}
+</style>
+<center>
+<p><img src="images/all-logo.png" /><br />
+<br> <br></p>
+<h3>
+<p><strong>ONLINE INTERNATIONAL ENGLISH IMPROMPTU SPEECH CONTEST</strong><br />
+<strong>FOR RAJABHAT AND ASEAN UNIVERSITIES</strong><br />
+<br />
+<strong>19<span class="math inline">\(^{th}\)</span> August 2021</strong></p>
+</h3>
+<blockquote>
+<h2>
+<ul class="pager">
+<!--this is the style of the button-->
+<li>
+<a href=files/speech-contest-registration-form.pdf><strong>DOWNLOAD REGISTRATION FORM</strong></a>
+</li>
+<!--This button takes me to the table of contents-->
+</ul>
+</h2>
+</blockquote>
+</center>
+<hr />
+<p><strong>I. INTRODUCTION</strong><br />
+</p>
+<p>Over a decade, ASEAN has been increasingly recognized by peoples in Southeast Asian nations as a large number of such public and private organizations have been deliberately preparing their members, with an emphasis on raising their awareness in regard to effects of becoming one of the founding members of the ASEAN Community. Apart from a particular focus on ASEAN knowledge, the English abilities of citizens in each ASEAN country are considered as equally crucial since this language has been used widely as an international means for global communication.<br />
+</p>
+<p>Inasmuch as English is reasonably essential and apparently required as concisely mentioned, not only do ASEAN universities beneficially offer English courses to students, but they also provide them with extracurricular activities, especially exchange events and competitions among educational institutions, to enhance their English proficiency and personal interactions. For this reason, Thepsatri Rajabhat University (TRU), Universiti Teknologi Mara Kedah Branch (UiTM), Universitas Sarjanawiyata Tamansiswa (UST), Ho Chi Minh City University of Technology (HUTECH), and Universitas PGRI Adi Buana Surabaya (UNIPA) are co-organizing an online international English speech contest for those ASEAN universities in order to principally promote sustainable relationships, eventually leading to invaluable exchange of experiences in terms of ASEAN languages, cultures, and traditions between Thai and other ASEAN students.<br />
+<br />
+*<strong> </strong>II. PURPOSES**<br />
+</p>
+<ol style="list-style-type: decimal">
+<li>To provide students from Rajabhat and other ASEAN universities with an opportunity to enhance their English speaking abilities.<br />
+</li>
+<li>To promote sustainable relationships among students from Rajabhat and other ASEAN universities.<br />
+</li>
+<li>To create an educational network, which is beneficial to both students and lecturers from participating universities in terms of exchange programs and other international competitions in the future. <br />
+</li>
+</ol>
+<hr />
+<p><strong>III. ELIGIBILITY</strong><br />
+</p>
+<p>Contestants whose native language is not English must be Bachelor’s degree students, majoring in any fields, from Rajabhat or other ASEAN universities, including Malaysia, Vietnam, Cambodia, Singapore, Brunei, Laos, Myanmar, the Philippines, and Indonesia. No more than three contestants can be sent by one university.<br />
+<br />
+</p>
+<hr />
+<p><strong>IV. SPEECH SUBJECTS</strong><br />
+</p>
+<p>Each contestant must make a <u><em>four-to-seven-minute impromptu speech</em></u> based on the following main topic <strong>“EFFECTS ON STUDENTS’ LEARNING DURING COVID-19”</strong>.</p>
+<p>Note: <u><em>Sub-topics will be revealed on the competition day. Each contestant will be given a different sub-topic, and he/she will have a couple of minutes for content preparation prior to his/her speech.</em></u><br />
+<br />
+</p>
+<hr />
+<p><strong>V. RULES OF CONTEST</strong><br />
+</p>
+<ol style="list-style-type: decimal">
+<li>Each speech will be 4-7 minutes long. A contestant will be disqualified if the speech is less than four minutes or more than seven minutes.<br />
+</li>
+<li>Contestants will deliver their speeches in the order determined by drawing lots, which will be announced on <strong>IACE 2021</strong> Facebook Fanpage on <u><em>16<span class="math inline">\(^{th}\)</span> August 2021</em></u>.<br />
+</li>
+<li>Each contestant must make a speech without any audio-visual aids or equipment.<br />
+</li>
+<li>ZOOM will be used during the competition. Zoom ID and Passcode will be sent to each contestant via email and also announced on <a href="https://web.facebook.com/IACE-2021-114326477566759"><strong>IACE 2021 Facebook Fanpage</strong></a>.<br />
+</li>
+<li>Microphone, camera, and internet connection will be tested before each contestant begins his/her speech.<br />
+</li>
+<li>There is one round of competition. Each contestant will be asked a question by one of the judges after his/her speech.<br />
+</li>
+<li>Each contestant will be given a different sub-topic, and he/she will have a couple of minutes for content preparation prior to his/her speech.<br />
+</li>
+<li>Each contestant’s speech will be recorded. All record files will be kept for 3 months before being deleted.<br />
+</li>
+<li>Impromptu speech contest criteria<br />
+9.1 Introduction: Self-introduction, Leading-in, Coherence, Ending (15 points)<br />
+9.2 Content: Relatedness to the theme, Language Usage, Comprehensibility, Sequence, Conclusion (50 points)<br />
+9.3 Voice Usage: Pronunciation, Accent, Cluster, Final Sound (20 points)<br />
+9.4 Time Management: Appropriateness (5 points)<br />
+9.5 Ability to Answer Question: Relatedness to the questions (10 points)<br />
+</li>
+</ol>
+<p><br />
+</p>
+<hr />
+<p><strong>VI. AWARDS</strong><br />
+</p>
+<ol style="list-style-type: decimal">
+<li>The winner and his/her speech coach will be awarded 9,900 Baht (approx. 330USD) with a certificate.<br />
+</li>
+<li>The first runner-up and his/her speech coach will be awarded 8,000 Baht (approx. 265 USD) with a certificate.<br />
+</li>
+<li>The second runner-up and his/her speech coach will be awarded 7,000 Baht (approx. 235 USD) with a certificate.<br />
+</li>
+<li>The third runner-up and his/her speech coach will be awarded 6,000 Baht (approx. 200 USD) with a certificate.<br />
+</li>
+<li>The fourth runner-up and his/her speech coach will be awarded 5,000 Baht (approx. 165 USD) with a certificate.</li>
+</ol>
+<p><span class="math inline">\(^{*}\)</span> <em>Awards will be transferred to the winners’ bank accounts after they have sent their scanned passports with signatures to the organizers.</em><br />
+<span class="math inline">\(^{**}\)</span> <em>All contestants will receive a participation certificate.</em><br />
+<br />
+</p>
+<hr />
+<p><strong>VII. DATES AND TIME</strong><br />
+</p>
+<ol style="list-style-type: decimal">
+<li>Registration: 1<span class="math inline">\(^{st}\)</span> July 2021 - 10<span class="math inline">\(^{th}\)</span> August 2021<br />
+</li>
+<li>Impromptu speech contest: 19<span class="math inline">\(^{th}\)</span> August 2021, 09:00 a.m. - 05:00 p.m.<br />
+<br />
+</li>
+</ol>
+<hr />
+<p><strong>VIII. VENUE</strong><br />
+</p>
+<p>ZOOM Application (Zoom ID and Passcode will be sent to each contestant via email and also announced on IACE 2021 Facebook Fanpage.)<br />
+<br />
+</p>
+<hr />
+<p><strong>IX. HOW TO REGISTER</strong><br />
+</p>
+<p>There is no registration fee for the contest. An interested individual can send a completed application form to <a href="jacksomchai@yahoo.com">jacksomchai@yahoo.com</a> from 1<span class="math inline">\(^{st}\)</span> July 2021 until 10<span class="math inline">\(^{th}\)</span> August 2021<br />
+<br />
+</p>
+<hr />
+<p><strong>X. FOR MORE INFORMATION, PLEASE CONTACT:</strong><br />
+</p>
+<p>Dr. Somchai Watcharapunyawong<br />
+Director of Language Center<br />
+Thepsatri Rajabhat University<br />
+321 Naraimaharat Road, Thalechupsorn,<br />
+Muang, Lop Buri, Thailand, 15000<br />
+Phone: +66-3641-1150<br />
+Mobile: +668-2483-6999<br />
+Fax: +66-3641-1150<br />
+E-mail: <a href="jacksomchai@yahoo.com">jacksomchai@yahoo.com</a> </p>
+<hr />
+
+<style>
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #3b3834;
+  color: white;
+  text-align: center;
+  font-family: Sans-Serif;
+  font-size: 12px;
+}
+</style>
+
+<div class="footer">
+<center>
+<p>Copyright &copy; 2021 IACE. All rights reserved.</p>
+</center>
+</div>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

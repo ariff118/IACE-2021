@@ -1,0 +1,24 @@
+name: "IACE 2021"
+output_dir: "public"
+navbar:
+  title: "IACE 2021"
+  left:
+    - text: "Home"
+      href: index.html
+    - text: "Schedule"
+      href: schedule.html
+    - text: "Messages"
+      href: messages.html
+    - text: "Speech Contest"
+      href: speech.html
+    - text: "Pitching Competition"
+      href: pitching.html
+    - text: "Conference"
+      href: conference.html
+output:
+  html_document:
+    include:
+      in_header: assets/header.html
+      after_body: footer.html
+    theme: yeti
+    css: 'styles.css'

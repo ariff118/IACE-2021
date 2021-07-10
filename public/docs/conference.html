@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>conference.knit</title>
+
+<script src="site_libs/header-attrs-2.8/header-attrs.js"></script>
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/yeti.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+      <title></title>
+  </head>
+  <body>
+    <div class="article-header">
+      <center><img src="images/blue-logo.png" class="article-banner" alt=""></center>
+    </div>
+    </a>
+    <br></br>
+    <dev>
+      <center>
+        <p>Current Date and Time in Sungai Petani</p>
+        <p><span id='date-time'></span>.</p>
+
+      	<script>
+      		function startTime() {
+        		var dt = new Date();
+            	var h = dt.getHours();
+  				    var m = dt.getMinutes();
+  				    var s = dt.getSeconds();
+  				m = checkTime(m);
+  				s = checkTime(s);
+        		document.getElementById('date-time').innerHTML = dt;
+            	var t = setTimeout(startTime, 1000);
+			}
+       		function checkTime(i) {
+  				if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+  				return i;
+			}
+	  	</script>
+    	<body onload="startTime()">
+	  		<div id="txt"></div>
+    	</body>
+      </center>
+    </dev>
+  </body>
+</html>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+<link rel="stylesheet" href="styles.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">IACE 2021</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="schedule.html">Schedule</a>
+</li>
+<li>
+  <a href="messages.html">Messages</a>
+</li>
+<li>
+  <a href="speech.html">Speech Contest</a>
+</li>
+<li>
+  <a href="pitching.html">Pitching Competition</a>
+</li>
+<li>
+  <a href="conference.html">Conference</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+
+</div>
+
+
+<p><link rel="stylesheet" href="styles.css" type="text/css"></p>
+<!-- ```{r, echo=FALSE, warning=FALSE, layout='l-screen'} -->
+<!-- knitr::include_graphics("images/blue-logo.png") -->
+<!-- ```   -->
+<style>
+body {
+text-align: justify}
+</style>
+<center>
+<p><img src="images/all-logo.png" /><br />
+<br> <br> <br></p>
+<h3>
+<strong>ONLINE INTERNATIONAL CONFERENCE ON</strong><br />
+<strong>“TEACHING AND LEARNING IN NEW NORMALITY: A KEY TO EMPOWER TEACHER TOWARDS SUSTAINABLE EDUCATION”</strong><br />
+<br />
+<strong>20<span class="math inline">\(^{th}\)</span> August 2021</strong>
+</h3>
+<blockquote>
+<h2>
+<ul class="pager">
+<!--this is the style of the button-->
+<li>
+<a href=files/conf-registration-form.pdf><strong>DOWNLOAD CONFERENCE REGISTRATION FORM</strong></a>
+</li>
+<!--This button takes me to the table of contents-->
+<li>
+<a href=files/biography-form.pdf><strong>DOWNLOAD BIOGRAPHY FORM</strong></a>
+</li>
+<!--This button takes me to the table of contents-->
+</ul>
+</h2>
+</blockquote>
+</center>
+<p>Thepsatri Rajabhat University is organizing an online international conference on Friday, 20<span class="math inline">\(^{th}\)</span> August 9:00 a.m. to 4.30 p.m. (Thailand Time).</p>
+<p>This conference will provide a unique opportunity for TRU’s network including lecturers, researchers, practitioners, educators, interested participants and other stakeholders to share their current insightful knowledge and research results on teaching and learning in new normality. <em>The conference will be driven by a desire to facilitate and navigate researchers during Covid-19 pandemic and to let them stay connected to academic communities</em>. The conference will encompass oral presentation via zoom video conference with submitted papers with the key current topic:<br />
+<br />
+</p>
+<center>
+<p style="font-family:Serif;font-size:14pt;">
+<strong>Teaching and Learning in New Normality: A Key to Empower Teacher towards Sustainable Education</strong>
+</p>
+</center>
+<hr />
+<p><strong>I. Co-hosts</strong></p>
+<ul>
+<li>Universiti Teknologi MARA Kedah Branch, Malaysia<br />
+</li>
+<li>Universitas Sarjanawiyata Tamansiswa, Indonesia<br />
+</li>
+<li>Universitas PGRI Adi Buana Surabaya, Indonesia<br />
+</li>
+<li>Ho Chi Minh City University of Technology, Vietnam<br />
+</li>
+</ul>
+<hr />
+<p><strong>II. Conference Platform:</strong></p>
+<p>The conference will take place via Zoom Video Conference with plenary room and session rooms.<br />
+<u><strong><em>Note that: There is no registration fee for the conference.</em></strong></u><br />
+</p>
+<hr />
+<p><strong>III. How to Participate and Conference Process:</strong></p>
+<ul>
+<li>Fill in the conference registration form provided in order to state that you are willing to participate in this conference. Please send a brief biography with presenter’s photograph along with the registration form. Please find the registration form and brief biography at <a href="https://1th.me/PeOaK">https://1th.me/PeOaK</a>.<br />
+</li>
+<li>To facilitate the submission process, the presenters should strictly follow the submission guideline provided at <a href="https://1th.me/PeOaK">https://1th.me/PeOaK</a>.<br />
+</li>
+<li>Submit your registration form and full paper to <a href="ramon.s@lawasri.tru.ac.th">ramon.s@lawasri.tru.ac.th</a>. After submission, you will be acknowledged for conference acceptance via an email within three working days.<br />
+</li>
+<li>The presenters must prepare a Power Point or any other presentation forms available.<br />
+</li>
+<li>The presenters must present their works by themselves and answer the questions provided by participants. The certificates will be provided after the completion of presentation.<br />
+</li>
+<li>The language available in the oral presentation is English. The presenters will be allocated 20 minutes for presentation and 10 minutes for questions and answers.<br />
+</li>
+<li>After conference date, all the papers will be selected by the scientific and conference committee to be published in our partner journals and undergone a double-blind peer review. The selected papers will be announced within three weeks via email with ‘a Letter of Paper Acceptance’. At this point, the presenters need to strictly follow submission guideline and template of a journal that selects your paper for publication. The partner journals will be responsible for publication process.<br />
+</li>
+<li>The papers which are not selected for publication in our partner journals will be published in Proceedings of IACE 2021, Thepsatri Rajabhat University.<br />
+</li>
+</ul>
+<hr />
+<p><strong>IV. Partner Journals</strong></p>
+<table>
+<colgroup>
+<col width="4%" />
+<col width="59%" />
+<col width="36%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="right"></th>
+<th>Name of Partner Journals</th>
+<th align="center">Name of Publishers</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1.</td>
+<td>Faculty of Humanity and Social Sciences, Thepsatri Rajabhat University Journal</td>
+<td align="center">Thepsatri Rajabhat University</td>
+</tr>
+<tr class="even">
+<td align="right">2.</td>
+<td>Lawarath Social e-Journal Thepsatri Rajabhat University Journal</td>
+<td align="center">Thepsatri Rajabhat University</td>
+</tr>
+<tr class="odd">
+<td align="right">3.</td>
+<td>Journal of Creative Practices in Language Learning and Teaching (CPLT)</td>
+<td align="center">Universiti Teknologi MARA</td>
+</tr>
+<tr class="even">
+<td align="right">4.</td>
+<td>Journal of English Language and Language Teaching</td>
+<td align="center">Universitas Sarjanawiyata Tamansiswa</td>
+</tr>
+<tr class="odd">
+<td align="right">5.</td>
+<td>Tamansiswa International Journal in Education and Science</td>
+<td align="center">Universitas Sarjanawiyata Tamansiswa</td>
+</tr>
+<tr class="even">
+<td align="right">6.</td>
+<td>Journal of English Language and Pedagogy</td>
+<td align="center">Universitas Sarjanawiyata Tamansiswa</td>
+</tr>
+<tr class="odd">
+<td align="right">7.</td>
+<td>Journal of Technology &amp; Innovation (JTIN)</td>
+<td align="center">Ho Chi Minh City University of Technology</td>
+</tr>
+<tr class="even">
+<td align="right">8.</td>
+<td>Procedia Social and Behavioral Sciences (Publication fee is required)</td>
+<td align="center">Ho Chi Minh City University of Technology</td>
+</tr>
+<tr class="odd">
+<td align="right">9.</td>
+<td>Journal of English Teaching Adi Buana (JET Buana)</td>
+<td align="center">Universitas PGRI Adi Buana Surabaya, Indonesia</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><strong>V. Important Dates: Process Dates</strong></p>
+<table>
+<colgroup>
+<col width="57%" />
+<col width="42%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">Process</th>
+<th align="center">Date</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">Paper submission</td>
+<td align="center">1st July 2021</td>
+</tr>
+<tr class="even">
+<td align="center">Paper submission deadline</td>
+<td align="center">13th August 2021</td>
+</tr>
+<tr class="odd">
+<td align="center">Acceptance notification of papers</td>
+<td align="center">18th August 2021</td>
+</tr>
+<tr class="even">
+<td align="center">Conference day</td>
+<td align="center">20th August 2021</td>
+</tr>
+<tr class="odd">
+<td align="center">Notification for selected papers</td>
+<td align="center">6th September 2021</td>
+</tr>
+<tr class="even">
+<td align="center">Submission Deadline for revised full papers</td>
+<td align="center">It depends on partner journals.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><strong>VI. Overall Conference Schedule Time Speakers</strong></p>
+<div style="display: flex; ">
+<div class="column" style="width:10%;">
+
+</div>
+<div class="column" style="width:5%;">
+<p>  <!-- an empty Div (with a whitespace), serving as
+a column separator --></p>
+</div>
+<div class="column" style="width:40%;">
+<p><strong><em>Time</em></strong></p>
+</div>
+<div class="column" style="width:5%;">
+<p>  <!-- an empty Div (with a whitespace), serving as
+a column separator --></p>
+</div>
+<div class="column" style="width:40%;">
+<p><strong><em>Speakers</em></strong></p>
+</div>
+</div>
+<hr />
+<div style="display: flex; ">
+<div class="column" style="width:10%;">
+
+</div>
+<div class="column" style="width:5%;">
+<p>  <!-- an empty Div (with a whitespace), serving as
+a column separator --></p>
+</div>
+<div class="column" style="width:40%;">
+<p>Morning session<br />
+9:00 a.m. to 12:00 p.m.</p>
+</div>
+<div class="column" style="width:5%;">
+<p>  <!-- an empty Div (with a whitespace), serving as
+a column separator --></p>
+</div>
+<div class="column" style="width:40%;">
+<p><strong>Welcome Address</strong><br />
+by the President of Thepsatri Rajabhat University<br />
+and the administrative representatives from<br />
+co-hosted Universities<br />
+—</p>
+<p><strong>Keynote Speakers</strong><br />
+<em>(The names of keynote speakers and topics will be announced later in an abstract booklet on 16th August 2021.)</em></p>
+</div>
+</div>
+<hr />
+<div style="display: flex; ">
+<div class="column" style="width:10%;">
+
+</div>
+<div class="column" style="width:5%;">
+<p>  <!-- an empty Div (with a whitespace), serving as
+a column separator --></p>
+</div>
+<div class="column" style="width:40%;">
+<p>12.00 p.m. to 1.00 p.m.</p>
+</div>
+<div class="column" style="width:5%;">
+<p>  <!-- an empty Div (with a whitespace), serving as
+a column separator --></p>
+</div>
+<div class="column" style="width:40%;">
+<p><strong>Lunch Break</strong></p>
+</div>
+</div>
+<hr />
+<div style="display: flex; ">
+<div class="column" style="width:10%;">
+
+</div>
+<div class="column" style="width:5%;">
+<p>  <!-- an empty Div (with a whitespace), serving as
+a column separator --></p>
+</div>
+<div class="column" style="width:85%;">
+<center>
+<p>In the afternoon, the presentations will be divided into four session rooms<br />
+according to a specific field of study as the following:</p>
+</center>
+</div>
+</div>
+<hr />
+<div style="display: flex; ">
+<div class="column" style="width:10%;">
+
+</div>
+<div class="column" style="width:5%;">
+<p>  <!-- an empty Div (with a whitespace), serving as
+a column separator --></p>
+</div>
+<div class="column" style="width:40%;">
+<p>Afternoon session<br />
+1.00 p.m. - 4.30 p.m.</p>
+</div>
+<div class="column" style="width:5%;">
+<p>  <!-- an empty Div (with a whitespace), serving as
+a column separator --></p>
+</div>
+<div class="column" style="width:40%;">
+<p>Room 1: Humanities and Social Sciences<br />
+<br />
+Room 2: Science and Technology<br />
+<br />
+Room 3: Education<br />
+<br />
+Room 4: Management</p>
+</div>
+</div>
+<hr />
+<div style="display: flex; ">
+<div class="column" style="width:10%;">
+
+</div>
+<div class="column" style="width:5%;">
+<p>  <!-- an empty Div (with a whitespace), serving as
+a column separator --></p>
+</div>
+<div class="column" style="width:85%;">
+<p><strong>Note that</strong>: if there are more six presenters in each session room, an additional session room will be created.</p>
+</div>
+</div>
+<p><br />
+<br />
+</p>
+<hr />
+<p><strong>VII. For more information</strong></p>
+<p>Please contact:<br />
+Ms. Ramon Suwansawek<br />
+International Relations Officer<br />
+Tel: +66 918876002<br />
+Email: <a href="ramon.s@lawasri.tru.ac.th">ramon.s@lawasri.tru.ac.th</a><br />
+<br />
+</p>
+<hr />
+<p><strong>VIII. Submission Guidelines</strong></p>
+<p><br />
+</p>
+<center>
+<p style="font-family:Serif;font-size:14pt;">
+<strong>TITLE OF PAPER</strong>
+</p>
+<p style="font-family:Serif;font-size:12pt;">
+Presenting Author’s Name (Surname with Initials)<br />
+Co-Author’s Name/s (Surname with Initials)<br />
+<em>University / Institute , Country* </em>E Mail / Contact Details*
+</p>
+</center>
+<br />
+
+<p style="font-family:Serif;font-size:12pt;">
+<strong>ABSTRACT</strong><br />
+An abstract is a single paragraph, without indentation, compendious summary of a paper’s substance including research question, background, purpose, methodology, results, and conclusion in 200 to 300 words. An abstract is a single paragraph, without indentation, compendious summary of a paper’s substance including research question, background, purpose, methodology, results, and conclusion in 200 to 300 words. An abstract is a single paragraph, without indentation, compendious summary of a paper’s substance including research question, background, purpose, methodology, results, and conclusion in 200 to 300 words. An abstract is a single paragraph, without indentation, compendious summary of a paper’s substance including research question, background, purpose, methodology, results, and conclusion in 200 to 300 words. An abstract is a single paragraph, without indentation, compendious summary of a paper’s substance including research question, background, purpose, methodology, results, and conclusion in 200 to 300 words. An abstract is a single paragraph, without indentation, compendious summary of a paper’s substance including research question, background, purpose, methodology, results, and conclusion in 200 to 300 words. An abstract is a single paragraph, without indentation, compendious summary of a paper’s substance including research question, background, purpose, methodology, results, and conclusion in 200 to 300 words. An abstract is a single paragraph, without indentation, compendious summary of a paper’s substance including research question, background, purpose, methodology, results, and conclusion in 200 to 300 words. An abstract is a single paragraph, without indentation, compendious summary of a paper’s substance including research question, background, purpose, methodology, results, and conclusion in 200 to 300 words.<br />
+<br />
+Keywords: Single, Paragraph, Summarizes, words indentation (maximum 6 words)<br />
+<br />
+<br />
+
+</p>
+<p><strong>Research Paper Preparation</strong><br />
+</p>
+<p>Research papers will be submitted to the experts for quality evaluation. Papers for both oral and poster presentations should be 10 to 12 A4 pages long with Times New Roman of 12-point font size. The research components are as follows:<br />
+</p>
+<ol style="list-style-type: decimal">
+<li><p>Content<br />
+1.1 An abstract written in English (A maximum of 1 page of A4 size is required) with 2-5 keywords<br />
+1.2 Statement of the Problems<br />
+1.3 Objectives<br />
+1.4 Scope of the Study<br />
+1.5 Definitions (if any)<br />
+1.6 Research Framework (if any)<br />
+1.7 Research Hypotheses (if any)<br />
+1.8 Research Methodology</p>
+<ul>
+<li>Population and Sample<br />
+</li>
+<li>Research Instruments<br />
+</li>
+<li>Data Collection<br />
+</li>
+<li>Data Analysis<br />
+</li>
+</ul>
+<p>1.9 Research Results<br />
+1.10 Discussions<br />
+1.11 Recommendations<br />
+1.12 References</p></li>
+<li><p>Text Preparation<br />
+2.1 Paper format must be an A4 sheet with top and left margins of 1.5-inch, bottom and right of 1 inch.<br />
+2.2 Name of the title must be only 14 pt bold, aligned at the center of the content page. Line and paragraph spacing is single space.<br />
+2.3 Name(s) of the author and advisor (if any), 12 pt bold, must be typed next to an English title with single space and must be aligned at the right margin.<br />
+2.4 Footnote consists of an academic title, job position, faculty, major, institution/work place. The footnote font must be 10 pt and placed on the first page.<br />
+2.5 English abstract font should be 12 pt bold, aligned at the center of the content page. The abstract must be written as “ABSTRACT”. The text of the abstract is 12 pt.<br />
+2.6 Headings of the research components must be 12 pt bold, aligned at the left margin. The text of the paper should be 12 pt.<br />
+2.7 Indentation must be started at 0.5 inch.<br />
+2.8 Tables must be prepared in a consistent form and should be numbered consecutively from 1 until the end of the paper. The order of the tables and captions should be at the same line, typed at the top of the table and aligned with the left margin.<br />
+2.9 Figure must be prepared in a consistent form and should be numbered consecutively from1 until the end of the paper. Place a figure’s order and caption in the same line.<br />
+2.10 In-text citation must be strictly followed the APA in-text citation style.<br />
+2.11 References must be APA references style and listed in an alphabetical order.</p></li>
+</ol>
+
+<style>
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #3b3834;
+  color: white;
+  text-align: center;
+  font-family: Sans-Serif;
+  font-size: 12px;
+}
+</style>
+
+<div class="footer">
+<center>
+<p>Copyright &copy; 2021 IACE. All rights reserved.</p>
+</center>
+</div>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

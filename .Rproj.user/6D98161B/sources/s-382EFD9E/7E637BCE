@@ -1,0 +1,30 @@
+{
+    "id": "7E637BCE",
+    "path": "D:/GitHub/IACE 2021/index.Rmd",
+    "project_path": "index.Rmd",
+    "type": "r_markdown",
+    "hash": "209973701",
+    "contents": "",
+    "dirty": false,
+    "created": 1625924009812.0,
+    "source_on_save": false,
+    "relative_order": 8,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "1,8",
+        "scrollLine": "0",
+        "rmdVisualMode": "false",
+        "rmdVisualWrapConfigured": "true",
+        "docOutlineVisible": "1",
+        "rmdVisualModeLocation": "2384:870.6666870117188"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1625927305,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1625927305392,
+    "read_only": false,
+    "read_only_alternatives": []
+}

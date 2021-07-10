@@ -1,0 +1,120 @@
+---
+name: ""
+title: ""
+output:
+  html_document: 
+    includes:
+      in_header: assets/header.html
+      after_body: footer.html
+#toc: false
+#toc_float: false
+---
+
+<link rel="stylesheet" href="styles.css" type="text/css">  
+
+<!-- ```{r, echo=FALSE, warning=FALSE, layout='l-screen'} -->
+<!-- knitr::include_graphics("images/blue-logo.png") -->
+<!-- ```   -->
+
+<style>
+body {
+text-align: justify}
+</style>
+
+<center>
+
+![](images/all-logo.png)\
+<br> <br> <br> 
+
+<h3>
+**ONLINE INTERNATIONAL IDEA PITCHING COMPETITION**\
+\
+**19$^{th}$ August 2021**
+</h3>
+</center>
+
+***  
+
+The International Idea Pitching Competition for students aims to recognize innovative thinking. The main objective of the idea pitching contest is to motivate the student to stimulate new ideas on **“OPPORTUNITIES TO BUSINESS DURING THE COVID-19 PANDEMIC”**. It is designed to make an advantageous connection with the creativity and expertise within the community for effective solutions and future development.\
+\
+
+***  
+
+**I. QUALIFICATIONS / RULES**\
+
+This international idea pitching competition is for recent undergraduate students from Rajabhat and ASEAN universities. Each university can send no more than two teams to the competition.  
+
+Each team can have 3 to 5 students. Single entries are permitted, but team registration is encouraged. A 5-minute oral presentation is required, and questions will be asked by judges via ZOOM application.\
+\
+
+***  
+
+**II. SUBMISSION**\
+
+1. Completed application form via this link: [https://forms.gle/KW4s7nZh67qcsHJM6](https://forms.gle/KW4s7nZh67qcsHJM6) or scan QR Code\
+
+<center>![](images/QR.bmp)</center>  
+
+2. A 3-5 minute video with screenshots describing/demonstrating the project is required.\
+\
+
+***  
+
+**III. TIMELINE OF COMPETITION**\
+
+Online registration and submission is from [*1$^{st}$ July to 10$^{th}$ August 2021*]{.ul}. The submission period closes on [*10th August 2021*]{.ul} at 11:59 PM (Bangkok: GMT+07:00)\
+\
+The competitors will be asked to share the link to the video presentation and related information (if any) within [*13$^{th}$ August 2021*]{.ul} at 11:59 PM (Bangkok: GMT+07:00) via e-mail: [sasilak.r@hotmail.com](sasilak.r@hotmail.com)\
+\
+Event: The competition starts on [*19$^{th}$ August 2021*]{.ul} at 9.00 AM (Bangkok: GMT+07:00)\
+\
+Award Ceremony on [*19$^{th}$ August 2021*]{.ul} at 4.30 PM (Bangkok: GMT+07:00)\
+\
+
+***  
+
+**IV. PROCEDURE OF COMPETITION**\
+
+**Prior to Competition Date**\
+
+The order of participating teams will be determined by drawing lots, and the details including competition schedule and zoom link will be sent to competitors via e-mail and announced on IACE 2021 Facebook Fanpage.\
+\
+\
+**Competition Date**\
+
+- The name of each team to be used during the competition on ZOOM will be set as follows:\
+<center>**_Team Name (University Abbreviation in parenthesis) Competitor’s Name_**</center>\
+<center>For example: LovelyPanda (TRU) Jackie</center>\
+
+- The competitors are required to be present in the ZOOM waiting room for at least 30 minutes before their competition time as scheduled. Any teams that fail to be present after 10 minutes of their competition time will be disqualified.  
+- Each team is required to present their video and then deliver their presentation for 3-5 minutes before being asked questions in terms of what they have presented by the judges.  
+- The competitors may leave the competition after answering the judges’ questions.\
+\
+
+***  
+
+**V. CRITERIA**\
+
+1. Creativity – The project is original, worthwhile and shows creative thinking, innovative and imaginative design, interesting and divergent interpretation and implementation. (20 points)\
+2. Quality of Solution – The project is well-thought out and is a good solution to the problem. The solution supports the theme assisting humanity to solve problems in the required areas. (20 points)\
+3. Video presentation – The presentation is attractive and well-organized with clear and logical information, including content, graphics, and figures. (20 points)\
+4. Project Impacts / Contribution – The project has favorable impacts on Opportunities to Business in Covid 19 Pandemic. (20 points)\
+5. Teamwork - There is evidence that team members have internalized knowledge and understanding of their project. The team members are able to demonstrate that all members play an important role in the development. The team displays positive and enthusiastic energy to share their project with others. (20 points)\
+\
+
+***  
+
+**VI. AWARDS**\
+
+1. The winner and his/her speech coach will be awarded 9,900 Baht (approx. 330USD) with a certificate.\
+2. The first runner-up and his/her speech coach will be awarded 8,000 Baht (approx. 265 USD) with a certificate.\
+3. The second runner-up and his/her speech coach will be awarded 7,000 Baht (approx. 235 USD) with a certificate.\
+4. The third runner-up and his/her speech coach will be awarded 6,000 Baht (approx. 200 USD) with a certificate.\
+5. The fourth runner-up and his/her speech coach will be awarded 5,000 Baht (approx. 165 USD) with a certificate.\
+\
+
+
+$^*$ *Awards will be transferred to the winners’ bank accounts after they have sent their scanned passports with signatures to the organizers.*\
+$^{**}$ *All contestants will receive a participation certificate.*
+
+

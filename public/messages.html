@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>messages.knit</title>
+
+<script src="site_libs/header-attrs-2.8/header-attrs.js"></script>
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/yeti.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+      <title></title>
+  </head>
+  <body>
+    <div class="article-header">
+      <center><img src="images/blue-logo.png" class="article-banner" alt=""></center>
+    </div>
+    </a>
+    <br></br>
+    <dev>
+      <center>
+        <p>Current Date and Time in Sungai Petani</p>
+        <p><span id='date-time'></span>.</p>
+
+      	<script>
+      		function startTime() {
+        		var dt = new Date();
+            	var h = dt.getHours();
+  				    var m = dt.getMinutes();
+  				    var s = dt.getSeconds();
+  				m = checkTime(m);
+  				s = checkTime(s);
+        		document.getElementById('date-time').innerHTML = dt;
+            	var t = setTimeout(startTime, 1000);
+			}
+       		function checkTime(i) {
+  				if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+  				return i;
+			}
+	  	</script>
+    	<body onload="startTime()">
+	  		<div id="txt"></div>
+    	</body>
+      </center>
+    </dev>
+  </body>
+</html>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+<link rel="stylesheet" href="styles.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">IACE 2021</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="schedule.html">Schedule</a>
+</li>
+<li>
+  <a href="messages.html">Messages</a>
+</li>
+<li>
+  <a href="speech.html">Speech Contest</a>
+</li>
+<li>
+  <a href="pitching.html">Pitching Competition</a>
+</li>
+<li>
+  <a href="conference.html">Conference</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+
+</div>
+
+
+<p><link rel="stylesheet" href="styles.css" type="text/css"></p>
+<!-- ```{r, echo=FALSE, warning=FALSE, layout='l-screen'} -->
+<!-- knitr::include_graphics("images/blue-logo.png") -->
+<!-- ```   -->
+<center>
+<h1>
+<strong>PRESIDENT &amp; RECTOR MESSAGES</strong><br />
+<img src="images/all-logo.png" />
+</h1>
+</center>
+<style>
+body {
+text-align: justify}
+</style>
+<div id="section" class="section level2 tabset">
+<h2 class="tabset"></h2>
+<div id="tru" class="section level3">
+<h3><strong>TRU</strong></h3>
+<center>
+<img src="images/tru.jpg" width="180" /><br />
+<br> <br> <br> <strong>MESSAGE FROM PRESIDENT OF</strong><br />
+<strong>THEPSATRI RAJABHAT UNIVERSITY</strong>
+</center>
+<p><br> International partnerships among universities are beneficial to all, ranging from students to staff. The rate of internationalization is increasingly rapid due to various communication channels and inexpensive travel. Evidently, most universities across the world are already seeking to make the most of the possibilities by forming global partnerships and fostering relationships with other institutions. This effort mainly aims to promote students’ and staff’s potential and to strengthen cultures as well as the relationship among university networks.</p>
+<p>Forming international university partnerships offers students an opportunity to learn not only academic and cultural aspects but also life skills. Additionally, it enables universities to better understand the cultures of other nations, thereby facilitating their marketing success there.</p>
+<p>The <span class="math inline">\(4^{th}\)</span> International Academic &amp; Cultural Exchange 2021 (Online) is co-organized by Thepsatri Rajabhat University (TRU), Universiti Teknologi Mara Kedah Branch (UiTM), Universitas Sarjanawiyata Tamansiswa (UST), Ho Chi Minh City University of Technology (HUTECH), and Universitas PGRI Adi Buana Surabaya (UNIPA) in order to provide students and staff from our university networks with valuable opportunities to present and exchange their learning and working outcomes.</p>
+<p>Hopefully, the <span class="math inline">\(4^{th}\)</span> International Academic &amp; Cultural Exchange 2021 (Online) will be successful and productive for all participants and bring such strong friendship among the universities.</p>
+<center>
+<img src="images/chintana.jpg" width="180" /><br />
+<img src="images/sign_chintana.jpg" width="180" /><br />
+Asst. Prof. Chintana Vechmee<br />
+President<br />
+Thepsatri Rajabhat University, Thailand
+</center>
+<hr />
+</div>
+<div id="uitm-kedah" class="section level3">
+<h3><strong>UiTM KEDAH</strong></h3>
+<center>
+<img src="images/uitm.jpg" width="180" /><br />
+<br> <br> <br> <strong>MESSAGE FROM RECTOR OF</strong><br />
+<strong>UNIVERSITI TEKNOLOGI MARA KEDAH BRANCH</strong>
+</center>
+<p><br> First and foremost, my gratitude goes to Thepsatri Rajabhat University, especially to Madam President, Assistant Professor Chintana Vechmee, and to all faculty members and staff. It is an honour for Universiti Teknologi Mara Kedah Branch, Malaysia to be part of the 4th International Academic &amp; Cultural Exchange 2021 (Online). On behalf of UiTM Kedah Branch as the co-organizers, it gives me the utmost joy in welcoming all the participants. A warm welcome is also given to all of the co-organizers - Universitas Sarjanawiyata Tamansiswa (Indonesia), Ho Chi Minh City University of Technology (Vietnam), Universitas Sebelas Maret (Indonesia), and Universitas Papua (Indonesia). I hope IACE 2021 will serve as a platform to network, exchange knowledge and strengthen the existing ties among peers.</p>
+<p>As part of the ASEAN community, the current pandemic situation is an eye opener. Yet, it spearheaded the adoption of online-based education, which include teaching and learning, webinars, conferences, and many more. This conference should be perceived as a stepping-stone for all - academics, researchers, practitioners as well as the public – to discuss and share viewpoints, different arguments, and experiences. I am sure that all of us are looking forward to the conference as the best platform for us to learn more about different fields of study. Let us learn from the presenters in IACE 2021 and exchange ideas in order to build a strong foundation for sustainable future.</p>
+<p>Finally, I wish happy conferencing to all presenters and participants of the <span class="math inline">\(4^{th}\)</span> International Academic &amp; Cultural Exchange 2021 (Online). Thank you.</p>
+<center>
+<img src="images/rector.jpg" width="180" /><br />
+Prof. Dr. Mohamad Abdullah Hemdi<br />
+Rektor<br />
+Universiti Teknologi Mara Kedah Branch, Malaysia
+</center>
+<hr />
+</div>
+<div id="ust" class="section level3">
+<h3><strong>UST</strong></h3>
+<center>
+<img src="images/ust.jpg" width="180" /><br />
+<br> <br> <br> <strong>MESSAGE FROM RECTOR OF</strong><br />
+<strong>UNIVERSITAS SARJANAWIYATA TAMANSISWA</strong>
+</center>
+<p><br> Honorable President of TRU<br />
+Distinguished Rectors from university partners<br />
+Committee<br />
+Ladies and gentlemen,</p>
+<p><em>Assalamualaikum Wr. Wb.<br />
+Salam dan bahagia,</em><br />
+Hope everyone is well and blessed, aamiin…</p>
+<p>We are very delighted to participate in the <span class="math inline">\(4^{th}\)</span> International Academic &amp; Cultural Exchange 2021 (Online) hosted by our University Partner, Thepsatri Rajabhat University (TRU), Thailand.</p>
+<p>TRU always creates academic and non-academic activities promoting various and current theme annually. This year, due to Covid-19 outbreaks, IACE brings along online international English speech contest, online international idea pitching competition as well as international webinar.</p>
+<p>We thank very much for the great opportunity to be involved in this inspiring and fruitful event and we eventually wish you all the best. Stay healthy, safe, clean and happy. Thank you.</p>
+<p>With our warmest greetings from Yogyakarta.</p>
+<center>
+<img src="images/pardimin.jpg" width="180" /><br />
+<em>Wassalamualaikum Wr. Wb.</em><br />
+Rector of Universitas Sarjanawiyata Tamansiswa,<br />
+Prof. Drs. H. Pardimin, M.Pd., Ph.D
+</center>
+<hr />
+</div>
+<div id="hutech" class="section level3">
+<h3><strong>HUTECH</strong></h3>
+<center>
+<img src="images/hutech.jpg" width="180" /><br />
+<br> <br> <br> <strong>MESSAGE FROM VICE RECTOR OF</strong><br />
+<strong>HO CHI MINH CITY UNIVERSITY OF TECHNOLOGY</strong>
+</center>
+<p><br> Ladies and gentlemen, Distinguished guests</p>
+<p>I would like to express my sincere appreciation to all the staff from Thepsatri Rajabhat University, Thailand for their great initiative organizing the IACE 2021. I would like to thank all of you who are involved in making this event happen although we have been facing a tough time due to the Covid-19 pandemic.</p>
+<p>Today marks the 4th International Academic &amp; Cultural Exchange 2021 (Online) co-hosted by Thepsatri Rajabhat University, Thailand, Mara University of Technology, Malaysia, Universitas Tanjungpura, Indonesia, Universitas PGRI Adi Buana Surabaya, Indonesia, Universitas Sebelas Maret, Indonesia, and Ho Chi Minh City University of Technology - HUTECH, Vietnam. The IACE 2021 highlights the strong international partnerships among the universities, and it offers the students and staff from the partnered universities an invaluable chance to share their learning outcomes and research findings. Hence, it is strongly believed that this event can be a forum for sharings and discussions, and ultimately it will strengthen the friendship and cooperation among the universities.</p>
+<p>This year, the IACE 2021 focuses on the issue of teaching and learning in new normality: A key to empower teacher towards sustainable education, so this event is supposed to open up discussions for both regional and global perspectives for better understandings and more effective practices in the field of English language teaching and learning. Furthermore, this conference is hoped to address the challenges and opportunities for teaching and learning in new normality.</p>
+<p>I am looking forward to your constructive contributions during the conference, and I wish the IACE 2021 to be successful and fruitful.</p>
+<center>
+<img src="images/hoang.jpg" width="180" /><br />
+Assoc. Prof. Dr. Hoang Anh Tuan<br />
+Vice Rector, Ho Chi Minh City University of Technology (HUTECH)
+</center>
+<hr />
+</div>
+<div id="adi-buana" class="section level3">
+<h3><strong>ADI BUANA</strong></h3>
+<center>
+<img src="images/adi.jpg" width="180" /><br />
+<br> <br> <br> <strong>MESSAGE FROM RECTOR OF</strong><br />
+<strong>UNIVERSITAS PGRI ADI BUANA SURABAYA</strong>
+</center>
+<p><br> Warm Greetings</p>
+<p>Dear all,</p>
+<p>It is my honor to greet you from Indonesia. I am so delighted to join the <span class="math inline">\(4^{th}\)</span> International Academic &amp; Cultural Exchange 2021 (Online) among reputable universities in South East Asia. I believe that this great collaboration program will give lots of benefits to us all in terms of academic life and more specifically for our all beloved students.</p>
+<p>This cooperation will provide platforms for our students and lecturers to learn lots from each other in terms of cultures, language, and so on. The students can also share creativity, innovation, information and technology which is beneficial to their future as well as the next generation and the lecturers can have the opportunities to share their working outcomes. So, let us join hand in hand to build brighter education for all in South East Asia.</p>
+<p>Best Regards,</p>
+<center>
+<img src="images/subandowo.jpg" width="180" /><br />
+Dr. M.Subandowo, MS<br />
+Rector<br />
+Universitas PGRI Adi Buana Surabaya, Indonesia
+</center>
+</div>
+</div>
+
+<style>
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #3b3834;
+  color: white;
+  text-align: center;
+  font-family: Sans-Serif;
+  font-size: 12px;
+}
+</style>
+
+<div class="footer">
+<center>
+<p>Copyright &copy; 2021 IACE. All rights reserved.</p>
+</center>
+</div>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
