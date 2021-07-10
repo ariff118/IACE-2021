@@ -319,8 +319,8 @@ Email: [ramon.s\@lawasri.tru.ac.th](ramon.s@lawasri.tru.ac.th)\
 <p style="font-family:Serif;font-size:12pt;">
 Presenting Author's Name (Surname with Initials)\
 Co-Author's Name/s (Surname with Initials)\
-*University / Institute , Country\*
-*E Mail / Contact Details\*
+*University / Institute , Country*\
+*E Mail / Contact Details*\
 </p>
 </center>
 \
