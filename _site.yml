@@ -1,5 +1,6 @@
 name: "IACE 2021"
 output_dir: "public"
+favicon: "images/icon-logo.jpg"
 navbar:
   title: "IACE 2021"
   left:

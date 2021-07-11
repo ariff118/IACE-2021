@@ -1,6 +1,6 @@
 ---
-name: ""
-title: ""
+title: |
+  <span style="color: white;">International Conference | IACE2021</span>
 output:
   html_document: 
     includes:

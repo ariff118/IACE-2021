@@ -1,6 +1,6 @@
 ---
-name: ""
-title: ""
+title: |
+  <span style="color: white;">English Impropmtu Speech Contest | IACE2021</span>
 output:
   html_document: 
     includes:

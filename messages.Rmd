@@ -1,5 +1,6 @@
 ---
-title: ""
+title: |
+  <span style="color: white;">Messages | IACE2021</span>
 output:
   html_document: 
     includes:
@@ -43,8 +44,10 @@ The $4^{th}$ International Academic & Cultural Exchange 2021 (Online) is co-orga
 
 Hopefully, the $4^{th}$ International Academic & Cultural Exchange 2021 (Online) will be successful and productive for all participants and bring such strong friendship among the universities.
 
+\
 <center>
 ![](images/chintana.jpg){width="180"}\
+\
 ![](images/sign_chintana.jpg){width="180"}\
 Asst. Prof. Chintana Vechmee\
 President\
@@ -69,8 +72,10 @@ As part of the ASEAN community, the current pandemic situation is an eye opener.
 
 Finally, I wish happy conferencing to all presenters and participants of the $4^{th}$ International Academic & Cultural Exchange 2021 (Online). Thank you.
 
+\
 <center>
 ![](images/rector.jpg){width="180"}  
+\
 Prof. Dr. Mohamad Abdullah Hemdi  
 Rektor  
 Universiti Teknologi Mara Kedah Branch, Malaysia  
@@ -105,8 +110,10 @@ We thank very much for the great opportunity to be involved in this inspiring an
 
 With our warmest greetings from Yogyakarta.
 
+\
 <center>
 ![](images/pardimin.jpg){width="180"}\
+\
 *Wassalamualaikum Wr. Wb.*\
 Rector of Universitas Sarjanawiyata Tamansiswa,\
 Prof. Drs. H. Pardimin, M.Pd., Ph.D
@@ -114,7 +121,7 @@ Prof. Drs. H. Pardimin, M.Pd., Ph.D
 
 ***  
 
-### **HUTECH**  
+### **HUTECH University**  
 
 <center>
 ![](images/hutech.jpg){width="180"}\
@@ -134,15 +141,17 @@ This year, the IACE 2021 focuses on the issue of teaching and learning in new no
 
 I am looking forward to your constructive contributions during the conference, and I wish the IACE 2021 to be successful and fruitful.  
 
+\
 <center>
 ![](images/hoang.jpg){width="180"}  
+\
 Assoc. Prof. Dr. Hoang Anh Tuan  
 Vice Rector, Ho Chi Minh City University of Technology (HUTECH)  
 </center>  
 
 ***  
 
-### **ADI BUANA**  
+### **UNIVERSITAS PGRI ADI BUANA**  
 
 <center>
 ![](images/adi.jpg){width="180"}\
@@ -162,8 +171,10 @@ This cooperation will provide platforms for our students and lecturers to learn 
 
 Best Regards,
 
+\
 <center>
 ![](images/subandowo.jpg){width="180"}\
+\
 Dr. M.Subandowo, MS\
 Rector\
 Universitas PGRI Adi Buana Surabaya, Indonesia
